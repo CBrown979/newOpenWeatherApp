@@ -7,24 +7,28 @@
     <title>MyWeatherApp</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet">
-
 </head>
+
 <body>
     <div class="container-fluid text-center">
         <div id="details">
-            <h1>Your Weather</h1>
+            <h1>Your CurrentWeather</h1>
             <p>City:<span id="insertCity"></span></p>
             <p>TempF:<span id="insertTempF"></span></p>
             <p>TempC:<span id="insertTempC"></span></p>
             <p>Description:<span id="insertDescript"></span></p>
+            <!--<p id="data"></p>-->
+            <div id="iconic">
+                
+            </div>
         </div>
         <div id="click4Weather">
-            <button id="getUrs" class="btn-primary">Get Your Weather</button>
+            <button id="getUrs" class="btn-primary" onclick="show(data)">Get Your Weather</button>
             <button id="celsius">getCelsius</button>
         </div>
     </div>
     
-    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="index.js"></script>
 </body>
 </html>
