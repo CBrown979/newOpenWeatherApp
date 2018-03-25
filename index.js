@@ -1,4 +1,4 @@
-/*global $ navigator lat lon position*/
+/*global $ navigator*/
 
 $(document).ready(function(){
         
@@ -27,6 +27,8 @@ $(document).ready(function(){
                 },
                 success: function(data){
                     console.log(data);
+                    console.log(data.name);
+                    console.log(data.main.temp);
                 }
             });
     }
