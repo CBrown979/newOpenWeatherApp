@@ -43,13 +43,15 @@ $(document).ready(function(){
         var celTemp = (fahTemp - 32)*5/9;
         celTemp = celTemp.toFixed(0);
         
+        var details = data.weather[0].description;
+        
         //Putting data in my HTML
         $('#date').html("<p>" + date + "</p>");
         $('#city').html("<h2>" + city + "</h2>");
         
         //Temps
-        $('.change1').html("<h2>" + fahTemp + "&#8457" + "<h2>");
-        $('.change2').html("<h2>" + celTemp + "&#8451" + "<h2>");
+        $('.change1').html("<h2>" + "is " + fahTemp + "&#8457" + "<h2>");
+        $('.change2').html("<h2>" + "is " + celTemp + "&#8451" + "<h2>");
         
         //Toggling -- http://api.jquery.com/toggle/
     	$("#switchIt").click(function() {
@@ -57,7 +59,8 @@ $(document).ready(function(){
     		$("#switchIt") + $(".change2").toggle();
     	});
         
-        
+        //Weather Description
+        $('#details').html("<h3>" + "and " + details + "</h3>");
         
         //Icon Images
         //$('myObject').css('background-image', 'url(' + imageUrl + ')');
@@ -70,4 +73,3 @@ $(document).ready(function(){
     }
 });
 
-// api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}
