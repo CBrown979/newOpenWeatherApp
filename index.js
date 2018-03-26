@@ -44,6 +44,9 @@ $(document).ready(function(){
         celTemp = celTemp.toFixed(0);
         
         var details = data.weather[0].description;
+        var humidity = data.main.humidity;
+        var wind = data.wind.speed;
+        wind = wind.toFixed(0);
         
         //Putting data in my HTML
         $('#date').html("<p>" + date + "</p>");
@@ -60,7 +63,9 @@ $(document).ready(function(){
     	});
         
         //Weather Description
-        $('#details').html("<h3>" + "and " + details + "</h3>");
+        $('#details').html("<h3>" + "with " + details + "</h3>");
+        $('#extras').html("<p>" + "Outside Feel: Wind is " + wind + "MPH"+ " and Humidity is " + humidity + "%" + "</p>");
+        
         
         //Icon Images
         //$('myObject').css('background-image', 'url(' + imageUrl + ')');
@@ -69,7 +74,38 @@ $(document).ready(function(){
         if(data.weather[0].icon === "01d" || "01n"){
             $('body').css('background-image', 'url("https://images.pexels.com/photos/108941/pexels-photo-108941.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")');
         }
-        
+        //few clouds
+        else if(data.weather[0].icon === "02d" || "02n"){
+            $('body').css('background-image', 'url("https://images.pexels.com/photos/125457/pexels-photo-125457.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")');
+        }
+        //scattered clouds
+        else if(data.weather[0].icon === "03d" || "03n"){
+            $('body').css('background-image', 'url(https://images.pexels.com/photos/314726/pexels-photo-314726.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)');
+        }
+        //broken clouds
+        else if(data.weather[0].icon === "04d" || "04n"){
+            $('body').css('background-image', 'url(https://images.pexels.com/photos/186980/pexels-photo-186980.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)');
+        }
+        //shower rain
+        else if(data.weather[0].icon === "09d" || "09n"){
+            $('body').css('background-image', 'url(https://images.pexels.com/photos/373481/pexels-photo-373481.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)');
+        }
+        //rain
+        else if(data.weather[0].icon === "10d" || "10n"){
+            $('body').css('background-image', 'url(https://images.pexels.com/photos/110874/pexels-photo-110874.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)');
+        }
+        //thunderstorm
+        else if(data.weather[0].icon === "11d" || "11n"){
+            $('body').css('background-image', 'url(https://images.pexels.com/photos/67102/pexels-photo-67102.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)');
+        }
+        //snow
+        else if(data.weather[0].icon === "13d" || "13n"){
+            $('body').css('background-image', 'url(https://images.pexels.com/photos/58098/pexels-photo-58098.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)');
+        }
+        //mist
+        else if(data.weather[0].icon === "50d" || "50n"){
+            $('body').css('background-image', 'url(https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)');
+        }
     }
 });
 
